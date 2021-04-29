@@ -44,6 +44,9 @@ function fetchAircraft(hostname, port, setLastUpdate, setAircraft) {
 function App() {
   const [hostname, setHostname] = useState('pi.lan.xanderhirsch.us');
   const [port, setPort] = useState(8080);
+  const [sortBy, setSortBy] = useState('');
+  const [sortOrder, setSortOrder] = useState(true);
+  const [sortKeepNull, setSortKeepNull] = useState(false);
   // const [aircraft, setAircraft] = useState([]);
   // const [lastUpdate, setLastUpdate] = useState(0);
 
@@ -61,8 +64,18 @@ function App() {
         port={port}
         setPort={setPort} />
 
-      <Sort />
-      <Airspace aircrafts={parseAircraft(data.aircraft)} />
+      <Sort
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        sortKeepNull={sortKeepNull}
+        setSortKeepNull={setSortKeepNull} />
+      <Airspace
+        sortBy={sortBy}
+        sortOrder={sortOrder}
+        sortKeepNull={sortKeepNull}
+        aircrafts={parseAircraft(data.aircraft)} />
     </>
   )
 }
