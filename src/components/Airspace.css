@@ -1,3 +1,7 @@
-.MuiGrid-container {
-    margin: 1em;
+/* .MuiGrid-container {
+    spacing: 1em;
+} */
+
+.airspace {
+    padding: 1em;
 }

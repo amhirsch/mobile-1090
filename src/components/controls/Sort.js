@@ -8,8 +8,8 @@ import './Sort.css'
 export default function Sort(props) {
     return (
         <FormControl variant='outlined'>
-            <InputLabel>Sort By</InputLabel>
-            <Select>
+            <InputLabel id='sortLabel'>Sort By</InputLabel>
+            <Select labelId='sortLabel'>
                 <MenuItem value=''>None</MenuItem>
                 <MenuItem value='altitude'>Altitude</MenuItem>
                 <MenuItem value='heading'>Heading</MenuItem>
